@@ -1,0 +1,76 @@
+<core:View displayBlock="true"
+		   height="100%"
+		   controllerName="sap.ui.demo.fiori2.controller.Detail"
+		   xmlns="sap.uxap"
+		   xmlns:m="sap.m"
+		   xmlns:f="sap.f"
+		   xmlns:form="sap.ui.layout.form"
+		   xmlns:core="sap.ui.core">
+	<ObjectPageLayout id="ObjectPageLayout"
+					  showTitleInHeaderContent="true"
+					  alwaysShowContentHeader="false"
+					  preserveHeaderStateOnScroll="false"
+					  headerContentPinnable="true"
+					  isChildPage="true"
+					  upperCaseAnchorBar="false">
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+				<actions>
+					<m:ToggleButton
+							text="Edit"
+							type="Emphasized"
+							press="onEditToggleButtonPress"/>
+					<m:Button
+							text="Delete"
+							type="Transparent"
+							press="onDelete" />
+					<m:Button
+							text="Copy"
+							type="Transparent"/>
+					<m:Button
+							icon="sap-icon://action"
+							type="Transparent"/>
+				</actions>
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+
+		<sections>
+			<ObjectPageSection title="Detalhes">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<form:SimpleForm
+									maxContainerCols="2"
+									editable="false"
+									layout="ResponsiveGridLayout"
+									labelSpanL="12"
+									labelSpanM="12"
+									emptySpanL="0"
+									emptySpanM="0"
+									columnsL="1"
+									columnsM="1">
+								<form:content>
+									<m:Label text="Nome" />
+									<m:Input id="name" value="{userDetail>/data/UserName}" />
+									<m:Label text="Login" />
+									<m:Input id="login" value="{userDetail>/data/UserCode}" />
+									<m:Label text="Bloqueado" />
+									<m:Input value="{userDetail>/data/Locked}" />
+									<m:Label text="Email" />
+									<m:Input id="countryText" value="{userDetail>/data/eMail}" />
+								</form:content>
+							</form:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+		<footer>
+			<m:OverflowToolbar>
+				<m:ToolbarSpacer />
+				<m:Button type="Accept" text="Save" press="onSave" />
+				<m:Button type="Reject" text="Cancel" />
+			</m:OverflowToolbar>
+		</footer>
+	</ObjectPageLayout>
+</core:View>

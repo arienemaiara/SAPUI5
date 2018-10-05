@@ -1,0 +1,7 @@
+<View 
+	xmlns="sap.f" 
+	displayBlock="true" 
+	height="100%" 
+	controllerName="sap.ui.demo.fiori2.controller.App">
+	<FlexibleColumnLayout id="flexibleColumnLayout" stateChange="onStateChanged" backgroundDesign="Solid" layout="{/layout}" />
+</View>
